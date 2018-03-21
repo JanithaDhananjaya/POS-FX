@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="575.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.fxpos.controller.ManageCustomerFormController">
+    <stylesheets>
+        <URL value="@/lk/ijse/fxpos/view/style/managecustomerform.css" />
+    </stylesheets>
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="575.0" />
+      <Label id="lblMainNav" layoutX="14.0" layoutY="19.0" onMouseClicked="#navigateToMain" text="IJSE FX POS" textFill="WHITE">
+         <effect>
+            <Glow level="0.78" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="109.0" layoutY="12.0" text="Manage Customers" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <effect>
+            <Glow level="0.78" />
+         </effect>
+      </Label>
+      <Separator layoutX="97.0" layoutY="13.0" orientation="VERTICAL" prefHeight="28.0" prefWidth="3.0" />
+      <JFXButton layoutX="9.0" layoutY="62.0" onAction="#btnNewCustomerOnAction" prefHeight="36.0" prefWidth="114.0" stylesheets="@style/managecustomerform.css" text="New Customer" />
+      <JFXTextField fx:id="txtID" labelFloat="true" layoutX="10.0" layoutY="123.0" prefHeight="28.0" prefWidth="555.0" promptText="Enter Customer ID" />
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="9.0" layoutY="179.0" prefHeight="28.0" prefWidth="555.0" promptText="Enter Customer Name" />
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="10.0" layoutY="237.0" prefHeight="28.0" prefWidth="555.0" promptText="Enter Customer Address" />
+      <JFXTextField fx:id="txtSalary" labelFloat="true" layoutX="10.0" layoutY="292.0" prefHeight="28.0" prefWidth="555.0" promptText="Enter Customer Salary" />
+      <JFXButton layoutX="208.0" layoutY="332.0" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="76.0" style="-fx-background-color: #449d44;" stylesheets="@style/managecustomerform.css" text="Save" textFill="WHITE" />
+      <JFXButton fx:id="btnDelete" layoutX="289.0" layoutY="332.0" onAction="#btnDeleteOnAction" prefHeight="36.0" prefWidth="76.0" style="-fx-background-color: #d9534f;" stylesheets="@style/managecustomerform.css" text="Delete" textFill="WHITE" />
+      <TableView fx:id="tblCustomers" layoutX="16.0" layoutY="383.0" prefHeight="244.0" prefWidth="547.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn id="colName" prefWidth="154.0" style="-fx-alignment: CENTER-LEFT;" text="Name" />
+            <TableColumn id="colAddress" prefWidth="199.0" text="Address" />
+            <TableColumn id="colSalary" prefWidth="117.0" text="Salary" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
